@@ -1,0 +1,10 @@
+name: 'Wall of Fame'
+type: module
+description: 'Custom module to show winners'
+core_version_requirement: ^10
+package: Custom
+dependencies:
+  - drupal:paragraphs
+  - drupal:field
+  - drupal:image
+  - drupal:datetime

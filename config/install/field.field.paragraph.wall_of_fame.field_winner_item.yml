@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_winner_item
+    - paragraphs.paragraphs_type.wall_of_fame
+    - paragraphs.paragraphs_type.winner_item
+  module:
+    - entity_reference_revisions
+id: paragraph.wall_of_fame.field_winner_item
+field_name: field_winner_item
+entity_type: paragraph
+bundle: wall_of_fame
+label: 'Winner Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      winner_item: winner_item
+    negate: 0
+    target_bundles_drag_drop:
+      wall_of_fame:
+        weight: 3
+        enabled: false
+      winner_item:
+        weight: 4
+        enabled: true
+field_type: entity_reference_revisions

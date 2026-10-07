@@ -1,0 +1,9 @@
+wall-of-fame-library:
+  css:
+    theme:
+      css/wall_of_fame.css: {}
+  js:
+    js/wall_of_fame.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
