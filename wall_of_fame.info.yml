@@ -6,5 +6,8 @@ package: Custom
 dependencies:
   - drupal:paragraphs
   - drupal:field
+  - drupal:file
+  - drupal:filter
   - drupal:image
   - drupal:datetime
+  - drupal:text

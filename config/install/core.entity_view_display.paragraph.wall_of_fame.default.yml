@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.wall_of_fame.field_main_title
+    - field.field.paragraph.wall_of_fame.field_winner_item
+    - paragraphs.paragraphs_type.wall_of_fame
+  module:
+    - entity_reference_revisions
+id: paragraph.wall_of_fame.default
+targetEntityType: paragraph
+bundle: wall_of_fame
+mode: default
+content:
+  field_winner_item:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_main_title: true
+  created: true
+  status: true

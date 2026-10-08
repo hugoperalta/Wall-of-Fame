@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: winner_item
+label: 'Winner Item'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
