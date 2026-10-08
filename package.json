@@ -1,7 +1,12 @@
 {
   "name": "wall_of_fame",
   "version": "1.0.0",
-  "description": "SCSS Compiler fro Wall of Fame",
+  "description": "SCSS Compiler for Wall of Fame",
+  "scripts": {
+    "build": "gulp styles",
+    "watch": "gulp watch",
+    "start": "gulp"
+  },
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",

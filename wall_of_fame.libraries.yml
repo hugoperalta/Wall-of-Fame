@@ -1,9 +1,7 @@
-wall-of-fame-library:
+wall-of-fame-styles:
   css:
     theme:
+      'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Roboto+Slab:wght@300;400;500;700&display=swap':
+        type: external
       css/wall_of_fame.css: {}
-  js:
-    js/wall_of_fame.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
+      css/winner_item.css: {}

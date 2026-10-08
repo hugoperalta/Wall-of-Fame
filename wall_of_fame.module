@@ -9,5 +9,9 @@ function wall_of_fame_theme($existing, $type, $theme, $path) {
             'base hook' => 'paragraph',
             'template' => 'paragraph--wall-of-fame',
         ],
+        'paragraph__winner_item' => [
+            'base hook' => 'paragraph',
+            'template' => 'paragraph--winner-item',
+        ],
     ];
 }

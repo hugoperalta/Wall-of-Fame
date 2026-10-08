@@ -1,0 +1,356 @@
+.winner-card {
+  display: grid;
+  grid-template-areas: "image" "badge" "details";
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  overflow: hidden;
+  border-radius: 2px;
+  color: #3a3533;
+  -webkit-font-smoothing: antialiased;
+}
+.winner-card .winner-badge {
+  grid-area: badge;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px 0;
+  color: #e81c24;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  box-shadow: none;
+}
+.winner-card .badge-icon {
+  display: inline-block;
+  width: 15px;
+  height: 21px;
+  flex: 0 0 auto;
+  background: url("../assets/images/Badge.svg") center/contain no-repeat;
+}
+.winner-card .trophy-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("../assets/images/Trophy.svg");
+}
+.winner-card .winner-content,
+.winner-card .winner-content .field,
+.winner-card .winner-content .field__items,
+.winner-card .winner-content .field__item,
+.winner-card .winner-content .paragraph,
+.winner-card .winner-item-wrapper {
+  display: contents;
+}
+.winner-card .winner-content .field__label {
+  display: none;
+}
+.winner-card .winner-image {
+  grid-area: image;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1.7;
+}
+.winner-card .winner-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.winner-card .winner-details {
+  grid-area: details;
+  min-width: 0;
+  padding: 0 20px 20px;
+  color: #3a3533;
+}
+.winner-card .winner-title {
+  margin: 7px 0 16px;
+  color: #3a3533;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+.winner-card .winner-subtitle {
+  margin: 0 0 8px;
+  color: #3a3533;
+  font-family: "Roboto Slab", Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+.winner-card .winner-description {
+  margin-bottom: 12px;
+  color: #3a3533;
+  font-family: "Roboto", Arial, sans-serif !important;
+  font-size: 16px;
+  font-weight: 300 !important;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+.winner-card .winner-description * {
+  font-family: "Roboto", Arial, sans-serif !important;
+  font-weight: 300 !important;
+  letter-spacing: 0;
+}
+.winner-card .winner-description p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.winner-card .winner-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6b6868;
+  font-size: 14px;
+  line-height: 20px;
+}
+.winner-card .winner-date .date-icon {
+  display: inline-block;
+  width: 13px;
+  height: 14px;
+  flex: 0 0 auto;
+  background-image: url("../assets/images/Calendar.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.winner-card.first-place {
+  background: #f9f8f5;
+  box-shadow: none;
+  grid-template-areas: "image" "badge" "details";
+}
+.winner-card.first-place .winner-image {
+  aspect-ratio: 635/357;
+}
+.winner-card.first-place .winner-details {
+  padding: 0 16px 24px;
+}
+.winner-card.first-place .winner-title {
+  margin: 5px 0 12px;
+  font-size: 32px;
+  line-height: 42px;
+}
+.winner-card.second-place, .winner-card.third-place {
+  border-top: 8px solid #e81c24;
+}
+
+@media (min-width: 768px) {
+  .winner-card .winner-badge {
+    padding: 14px 20px 0;
+  }
+  .winner-card .winner-details {
+    padding: 0 20px 20px;
+  }
+  .winner-card.first-place {
+    grid-template-areas: "badge image" "details image";
+    grid-template-columns: minmax(0, 45fr) minmax(0, 55fr);
+    grid-template-rows: auto auto;
+    column-gap: 30px;
+    row-gap: 8px;
+    align-content: center;
+    align-items: center;
+    min-height: 357px;
+    overflow: visible;
+  }
+  .winner-card.first-place .winner-badge {
+    align-self: end;
+    padding: 24px 0 0;
+  }
+  .winner-card.first-place .winner-image {
+    align-self: center;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 635/357;
+  }
+  .winner-card.first-place .winner-image img {
+    border-radius: 2px;
+  }
+  .winner-card.first-place .winner-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-self: start;
+    padding: 0;
+  }
+  .winner-card.first-place .winner-title {
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #c9c5b9;
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .winner-card.first-place .winner-body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .winner-card.first-place .winner-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .winner-card.first-place .winner-subtitle {
+    margin: 0;
+    font-family: "Roboto Slab", Georgia, serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+  .winner-card.first-place .winner-description {
+    margin: 0;
+    color: #3a3533;
+    font-family: "Roboto", Arial, sans-serif !important;
+    font-size: 16px;
+    font-weight: 300 !important;
+    line-height: 24px;
+    letter-spacing: 0;
+  }
+  .winner-card.first-place .winner-description * {
+    font-family: "Roboto", Arial, sans-serif !important;
+    font-weight: 300 !important;
+    letter-spacing: 0;
+  }
+  .winner-card.first-place .winner-date {
+    color: #3a3533;
+  }
+  .winner-card.first-place .winner-date .date-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .winner-card.second-place, .winner-card.third-place {
+    display: grid;
+    grid-template-areas: "image image" ". badge" ". details";
+    grid-template-columns: 12% 88%;
+    grid-template-rows: auto auto 1fr;
+    overflow: visible;
+  }
+  .winner-card.second-place .winner-image, .winner-card.third-place .winner-image {
+    grid-area: image;
+    aspect-ratio: 4/3;
+  }
+  .winner-card.second-place .winner-badge, .winner-card.third-place .winner-badge {
+    z-index: 2;
+    margin-top: -112px;
+    padding: 24px 24px 0;
+    background: #fff;
+  }
+  .winner-card.second-place .winner-details, .winner-card.third-place .winner-details {
+    margin-top: -112px;
+    padding: 112px 24px 28px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  .winner-card.second-place .winner-title, .winner-card.third-place .winner-title {
+    margin-top: 0;
+  }
+  .winner-card.second-place .winner-date, .winner-card.third-place .winner-date {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 1200px) {
+  .winner-card.first-place {
+    min-height: 357px;
+  }
+  .winner-card.second-place, .winner-card.third-place {
+    grid-template-areas: "ribbon ribbon" "image image" ". panel";
+    grid-template-columns: 12% 88%;
+    grid-template-rows: 9px 405px minmax(172px, 1fr);
+    border-top: 0;
+    align-content: stretch;
+  }
+  .winner-card.second-place::before, .winner-card.third-place::before {
+    grid-area: ribbon;
+    content: "";
+    background: #e81c24;
+  }
+  .winner-card.second-place .winner-image, .winner-card.third-place .winner-image {
+    height: 405px;
+    aspect-ratio: auto;
+  }
+  .winner-card.second-place .winner-badge,
+  .winner-card.second-place .winner-details, .winner-card.third-place .winner-badge,
+  .winner-card.third-place .winner-details {
+    grid-area: panel;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .winner-card.second-place .winner-badge, .winner-card.third-place .winner-badge {
+    z-index: 2;
+    align-self: start;
+    margin-top: -120px;
+    padding: 31px 24px 0;
+    background: transparent;
+  }
+  .winner-card.second-place .badge-icon, .winner-card.third-place .badge-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .winner-card.second-place .trophy-icon, .winner-card.third-place .trophy-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .winner-card.second-place .winner-details, .winner-card.third-place .winner-details {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(88, 79, 76, 0.159501);
+  }
+  .winner-card.second-place .winner-title, .winner-card.third-place .winner-title {
+    margin: 0;
+    font-size: 25px;
+    line-height: 35px;
+  }
+  .winner-card.second-place .winner-details, .winner-card.third-place .winner-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 292px;
+    box-sizing: border-box;
+    align-self: stretch;
+    margin-top: -120px;
+    padding: 60px 24px 32px;
+    gap: 24px;
+  }
+  .winner-card.second-place .winner-body,
+  .winner-card.second-place .winner-copy, .winner-card.third-place .winner-body,
+  .winner-card.third-place .winner-copy {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .winner-card.second-place .winner-body, .winner-card.third-place .winner-body {
+    flex: 1 1 auto;
+    gap: 16px;
+  }
+  .winner-card.second-place .winner-copy, .winner-card.third-place .winner-copy {
+    flex: 1 1 auto;
+    gap: 8px;
+  }
+  .winner-card.second-place .winner-subtitle, .winner-card.third-place .winner-subtitle {
+    margin: 0;
+  }
+  .winner-card.second-place .winner-description, .winner-card.third-place .winner-description {
+    flex: 1 0 auto;
+    margin: 0;
+    color: #3a3533;
+    font-weight: 300;
+  }
+  .winner-card.second-place .winner-date, .winner-card.third-place .winner-date {
+    margin-top: auto;
+    color: #3a3533;
+    font-weight: 400;
+  }
+  .winner-card.second-place .winner-date .date-icon, .winner-card.third-place .winner-date .date-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (max-width: 767px) {
+  .winner-card.second-place, .winner-card.third-place {
+    border-top-width: 6px;
+  }
+  .winner-card.first-place .winner-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}

@@ -25,11 +25,11 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_description:
-    type: text_textfield
+    type: text_textarea
     weight: 3
     region: content
     settings:
-      size: 60
+      rows: 4
       placeholder: ''
     third_party_settings: {  }
   field_image:

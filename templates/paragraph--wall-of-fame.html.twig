@@ -1,9 +1,58 @@
-{{ attach_library('wall_of_fame/wall_of_fame_library') }}
+{{ attach_library('wall_of_fame/wall-of-fame-styles') }}
 
-<div class="wall_of_fame_container">
-
-    <h2 class="wall_of_fame_container">
-        Testing
+<div class="wall-of-fame-container">
+  {% if paragraph.field_main_title.value is not empty %}
+    <h2 class="wall-of-fame-main-title">
+      {{ paragraph.field_main_title.value }}
     </h2>
+  {% endif %}
+
+  {% if content.field_winners is defined %}
+    {% set winner_items = content.field_winners %}
+  {% else %}
+    {% set winner_items = content.field_winner_item %}
+  {% endif %}
+
+  {% if winner_items %}
+    <div class="winners-list">
+      {% for key, item in winner_items %}
+        {% if key matches '/^\\d+$/' %}
+            {% set position = key + 1 %}
+            {% if position <= 3 %}
+
+                {% set position_class = '' %}
+                {% set badge_text = '' %}
+
+                {% if position == 1 %}
+                    {% set position_class = 'first-place' %}
+                    {% set badge_text = 'The winner' %}
+                {% endif %}
+
+                {% if position == 2 %}
+                    {% set position_class = 'second-place' %}
+                    {% set badge_text = 'Second place' %}
+                {% endif %}
+
+                {% if position == 3 %}
+                    {% set position_class = 'third-place' %}
+                    {% set badge_text = 'Third place' %}
+                {% endif %}
+
+                <div class="winner-card {{ position_class }}">
+                  <div class="winner-badge">
+                    <span class="badge-icon{% if position == 1 %} trophy-icon{% endif %}" aria-hidden="true"></span>
+                    <span>{{ badge_text }}</span>
+                  </div>
+                  <div class="winner-content">
+                    {{ item }}
+                  </div>
+                </div>
+
+            {% endif %}
+        {% endif %}
+      {% endfor %}
+
+    </div>
+  {% endif %}
 
 </div>

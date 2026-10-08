@@ -1,0 +1,42 @@
+<div class="winner-item-wrapper">
+  {% if paragraph.field_image.entity is not empty %}
+    <div class="winner-image">
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+
+  <div class="winner-details">
+    {% if paragraph.field_title.value is not empty %}
+      <h3 class="winner-title">
+        {{ paragraph.field_title.value }}
+      </h3>
+    {% endif %}
+
+    <div class="winner-body">
+      <div class="winner-copy">
+        {% if paragraph.field_subtitle.value is not empty %}
+          <h4 class="winner-subtitle">
+            {{ paragraph.field_subtitle.value }}
+          </h4>
+        {% endif %}
+
+        {% if paragraph.field_description_long.value is not empty %}
+          <div class="winner-description">
+            {{ content.field_description_long }}
+          </div>
+        {% elseif content.field_description|render|striptags|trim is not empty %}
+          <div class="winner-description">
+            {{ content.field_description }}
+          </div>
+        {% endif %}
+      </div>
+
+      {% if paragraph.field_date_of_adding.value is not empty %}
+        <div class="winner-date">
+          <span class="date-icon" aria-hidden="true"></span>
+          <span class="date-text">Added {{ paragraph.field_date_of_adding.value|date('d/m/Y') }}</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
